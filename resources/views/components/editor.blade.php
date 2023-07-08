@@ -3,8 +3,6 @@
     $xModel = $xModel ?? null;
 @endphp
 <div wire:ignore>
-
-
     <textarea id="{{ $id }}" x-data="{
         model: @entangle($attributes->wire('model')) @if($defer ?? $attributes->wire('model')->hasModifier('defer'))
             .defer

@@ -50,27 +50,6 @@
                             x-on:livewire-upload-error="isUploading = false"
                             x-on:livewire-upload-progress="progress = $event.detail.progress">
 
-                            {{-- <div class="flex flex-col items-center justify-center align-middle  my-2">
-       
-       
-       
-                            <svg wire:loading wire:target="url" width="25" viewBox="-2 -2 42 42"
-                                xmlns="http://www.w3.org/2000/svg" stroke="rgb(30, 41, 59)" class="w-10 h-10 text-lg">
-                                <g fill="none" fill-rule="evenodd">
-                                    <g transform="translate(1 1)" stroke-width="4">
-                                        <circle stroke-opacity=".5" cx="18" cy="18" r="18"></circle>
-                                        <path d="M36 18c0-9.94-8.06-18-18-18">
-                                            <animateTransform attributeName="transform" type="rotate" from="0 18 18"
-                                                to="360 18 18" dur="1s" repeatCount="indefinite"></animateTransform>
-                                        </path>
-                                    </g>
-                                </g>
-                            </svg>
-                            <p wire:loading wire:target="url" class="text-lg">Cargando pdf
-                                ...</p>
-       
-       
-                        </div> --}}
                             <label class="form-label">Image</label>
                             <div class="border-2 border-dashed dark:border-dark-5 rounded-md pt-4">
 
@@ -83,8 +62,9 @@
 
                                 </div>
                             </div>
-                            {{-- <x-error property="url_img" /> --}}
+
                             @error('url_img')
+                                {{ $message }}
                             @enderror
                             <!-- Progress Bar -->
                             <div x-show="isUploading" class="bg-gray-200 h-[20px] w-ful  mt-3 rounded-md"
